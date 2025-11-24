@@ -7,7 +7,7 @@ set -euo pipefail
 
 # Configuration
 SITES_DIR="$(cd "$(dirname "$0")/../sites" && pwd)"
-FORMAT="${1:-table}"
+FORMAT="table"
 
 # Colors for output
 RED='\033[0;31m'
