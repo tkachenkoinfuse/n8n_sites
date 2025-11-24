@@ -1,0 +1,85 @@
+# n8n Sites - Git Ignore File
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Credentials and secrets
+credentials/
+*.key
+*.pem
+*.crt
+secrets/
+
+# n8n specific
+database.sqlite
+.n8n/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+*.bundle.js
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Docker volumes and data
+volumes/
+data/
+
+# Backups
+backups/
+*.sql
+*.dump
+
+# Site-specific data that shouldn't be committed
+sites/*/database.sqlite
+sites/*/credentials/*
+sites/*/data/
+sites/*/.env
+
+# Compiled scripts
+*.pyc
+__pycache__/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Test artifacts
+.pytest_cache/

@@ -1,0 +1,32 @@
+{
+  "name": "YOUR_SITE_NAME",
+  "description": "Brief description of the site purpose",
+  "owner": "YOUR_NAME",
+  "created": "YYYY-MM-DD",
+  "expires": "YYYY-MM-DD",
+  "environment": {
+    "N8N_BASIC_AUTH_ACTIVE": "true",
+    "N8N_BASIC_AUTH_USER": "admin",
+    "N8N_BASIC_AUTH_PASSWORD": "CHANGE_THIS_PASSWORD",
+    "N8N_HOST": "localhost",
+    "N8N_PORT": "5678",
+    "N8N_PROTOCOL": "http",
+    "WEBHOOK_URL": "http://localhost:5678/",
+    "GENERIC_TIMEZONE": "UTC",
+    "N8N_ENCRYPTION_KEY": "GENERATE_A_SECURE_KEY"
+  },
+  "database": {
+    "type": "sqlite",
+    "sqlite": {
+      "database": "database.sqlite"
+    }
+  },
+  "executions": {
+    "saveDataOnError": "all",
+    "saveDataOnSuccess": "all",
+    "saveDataManualExecutions": true,
+    "pruneData": true,
+    "pruneDataMaxAge": 336
+  },
+  "tags": ["temporary", "testing"]
+}

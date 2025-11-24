@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n_SITE_NAME
+    restart: unless-stopped
+    ports:
+      - "PORT_NUMBER:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=CHANGE_THIS_PASSWORD
+      - N8N_HOST=YOUR_HOST
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://YOUR_HOST:PORT_NUMBER/
+      - GENERIC_TIMEZONE=UTC
+      - N8N_ENCRYPTION_KEY=GENERATE_A_SECURE_KEY
+      - N8N_EDITOR_BASE_URL=http://YOUR_HOST:PORT_NUMBER/
+      - N8N_METRICS=false
+    volumes:
+      - ./data:/home/node/.n8n
+      - ./workflows:/workflows
+    networks:
+      - n8n_network
+
+networks:
+  n8n_network:
+    driver: bridge
+
+# Usage:
+# 1. Copy this file to your site directory
+# 2. Replace SITE_NAME with your site name
+# 3. Replace PORT_NUMBER with an available port
+# 4. Replace YOUR_HOST with your host address
+# 5. Replace CHANGE_THIS_PASSWORD with a secure password
+# 6. Replace GENERATE_A_SECURE_KEY with a secure random key
+# 7. Run: docker-compose up -d
